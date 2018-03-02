@@ -21,6 +21,12 @@
         android:id="@+id/txt_sum"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/txt_jni"
-        />
+        android:layout_below="@id/txt_jni" />
+
+    <TextView
+        android:id="@+id/txt_aidl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="aidl"
+        android:layout_below="@id/txt_sum" />
 </RelativeLayout>
