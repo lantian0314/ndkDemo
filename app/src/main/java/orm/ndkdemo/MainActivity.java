@@ -6,17 +6,23 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class MainActivity extends AppCompatActivity {
 
-    private TextView txt_test = null;
-    private TextView txt_sum = null;
+    @BindView(R.id.txt_jni)
+    TextView txt_test = null;
+    @BindView(R.id.txt_sum)
+    TextView txt_sum = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        txt_test = (TextView) findViewById(R.id.txt_jni);
-        txt_sum = (TextView) findViewById(R.id.txt_sum);
+        ButterKnife.bind(this);
+//        txt_test = (TextView) findViewById(R.id.txt_jni);
+//        txt_sum = (TextView) findViewById(R.id.txt_sum);
         String name = JniTest.getCString();
         int sum = JniTest.calAAndB(3, 5);
         txt_test.setText(name);
