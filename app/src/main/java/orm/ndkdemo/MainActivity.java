@@ -15,6 +15,7 @@ import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import orm.aidl.demo.IMyAidlInterface;
+import orm.ndkdemo.gson.GsonDemo;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,6 +37,14 @@ public class MainActivity extends AppCompatActivity {
         txt_test.setText(name);
         txt_sum.setText("3+5和是: " + sum);
         bindAidlServer();
+        GsonDemo gsonDemo = new GsonDemo();
+        gsonDemo.beanToJson();
+        gsonDemo.MapToJson();
+        gsonDemo.JsonToBean();
+        gsonDemo.JsonPrimitive();
+        gsonDemo.creatJsonObject();
+        gsonDemo.JsonExpose();
+        gsonDemo.sinceVersion();
     }
 
 
