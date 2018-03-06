@@ -6,6 +6,11 @@ def keystoreProperties = new Properties()
 keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 
 android {
+    //执行lint检查，有任何的错误或者警告提示，都会终止构建，我们可以将其关掉。
+    lintOptions {
+        abortOnError false
+    }
+    //签名
     signingConfigs {
         config {
             keyAlias keystoreProperties['keyAlias']
@@ -28,16 +33,25 @@ android {
         }
     }
 
-    compileOptions { buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.config
+    compileOptions {
+        buildTypes {
+            release {
+                // 不显示Log
+                buildConfigField "boolean", "LOG_DEBUG", "false"
+                //混淆
+                minifyEnabled true
+                //Zipalign优化
+                zipAlignEnabled true
+                // 移除无用的resource文件
+                shrinkResources true
+
+                proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+                signingConfig signingConfigs.config
+            }
+            debug {
+                signingConfig signingConfigs.config
+            }
         }
-        debug {
-            signingConfig signingConfigs.config
-        }
-    }
         sourceCompatibility JavaVersion.VERSION_1_7
         targetCompatibility JavaVersion.VERSION_1_7
     }
