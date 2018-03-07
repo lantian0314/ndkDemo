@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">ndkDemo</string>
     <string name="action_settings">Settings</string>
+    <string name="message">消息</string>
+    <string name="contact">联系人</string>
+    <string name="dynamic">动态</string>
 </resources>

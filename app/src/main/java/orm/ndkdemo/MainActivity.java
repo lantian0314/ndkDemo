@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -15,6 +16,7 @@ import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import orm.aidl.demo.IMyAidlInterface;
+import orm.ndkdemo.Fragment.FragmentMainActivity;
 import orm.ndkdemo.gson.GsonDemo;
 
 public class MainActivity extends AppCompatActivity {
@@ -45,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
         gsonDemo.creatJsonObject();
         gsonDemo.JsonExpose();
         gsonDemo.sinceVersion();
+        Intent intent = new Intent(MainActivity.this, FragmentMainActivity.class);
+        startActivity(intent);
     }
 
 
