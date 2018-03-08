@@ -42,36 +42,36 @@
         android:background="@color/blue">
 
         <TextView
-            android:onClick="txtClick"
             android:id="@+id/txt_message"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="1.0"
             android:gravity="center"
+            android:onClick="txtClick"
             android:text="@string/message"
             android:textColor="@color/main_top_tab_color"
             android:textSize="@dimen/main_top_tab_text_size"
             android:textStyle="bold" />
 
         <TextView
-            android:onClick="txtClick"
             android:id="@+id/txt_contact"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="1.0"
             android:gravity="center"
+            android:onClick="txtClick"
             android:text="@string/contact"
             android:textColor="@color/main_top_tab_color"
             android:textSize="@dimen/main_top_tab_text_size"
             android:textStyle="bold" />
 
         <TextView
-            android:onClick="txtClick"
             android:id="@+id/txt_dynamic"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="1.0"
             android:gravity="center"
+            android:onClick="txtClick"
             android:text="@string/dynamic"
             android:textColor="@color/main_top_tab_color"
             android:textSize="@dimen/main_top_tab_text_size"

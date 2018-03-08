@@ -10,14 +10,17 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import orm.aidl.demo.IMyAidlInterface;
 import orm.ndkdemo.Fragment.FragmentMainActivity;
 import orm.ndkdemo.gson.GsonDemo;
+import orm.ndkdemo.view.GridPwdView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,6 +31,10 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.txt_aidl)
     TextView txt_aidl = null;
     private IMyAidlInterface myAidlInterface = null;
+    @BindView(R.id.btn_fragment)
+    Button btn_fragment;
+    @BindView(R.id.btn_pwd)
+    Button btn_pwd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,10 +54,21 @@ public class MainActivity extends AppCompatActivity {
         gsonDemo.creatJsonObject();
         gsonDemo.JsonExpose();
         gsonDemo.sinceVersion();
-        Intent intent = new Intent(MainActivity.this, FragmentMainActivity.class);
-        startActivity(intent);
     }
 
+    @OnClick({R.id.btn_fragment, R.id.btn_pwd})
+    public void viewClick(Button button) {
+        switch (button.getId()) {
+            case R.id.btn_fragment:
+                Intent intent = new Intent(MainActivity.this, FragmentMainActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.btn_pwd:
+                Intent pwdnItent = new Intent(MainActivity.this, GridPwdView.class);
+                startActivity(pwdnItent);
+                break;
+        }
+    }
 
     private void bindAidlServer() {
         Intent intent = new Intent();
@@ -77,13 +95,6 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this, "aidl server disconnect", Toast.LENGTH_SHORT).show();
         }
     };
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

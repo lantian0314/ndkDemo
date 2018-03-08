@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.jungly.gridpasswordview.GridPasswordView
+        android:id="@+id/pswView"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:gpvGridColor="#ffffff"
+        app:gpvLineColor="#2196F3"
+        app:gpvLineWidth="1dp"
+        app:gpvPasswordLength="6"
+        app:gpvPasswordTransformation="$"
+        app:gpvPasswordType="numberPassword"
+        app:gpvTextColor="#2196F3"
+        app:gpvTextSize="25sp" />
+
+    <Button
+        android:id="@+id/btn_getpwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="pwdClick"
+        android:text="得到密码" />
+
+    <Button
+        android:id="@+id/btn_clearpwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="pwdClick"
+        android:text="清除密码" />
+
+    <Button
+        android:id="@+id/btn_txtype_pwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="pwdClick"
+        android:text="文本类型密码" />
+
+    <Button
+        android:id="@+id/btn_numtype_pwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="pwdClick"
+        android:text="数字类型密码" />
+
+    <Button
+        android:id="@+id/btn_pwdvisible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="pwdClick"
+        android:text="密码可见" />
+
+    <Button
+        android:id="@+id/btn_pwdinvisible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="pwdClick"
+        android:text="密码不可见" />
+</LinearLayout>

@@ -27,6 +27,22 @@
         android:id="@+id/txt_aidl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="aidl"
-        android:layout_below="@id/txt_sum" />
+        android:layout_below="@id/txt_sum"
+        android:text="aidl" />
+
+    <Button
+        android:id="@+id/btn_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_aidl"
+        android:onClick="viewClick"
+        android:text="Fragment界面" />
+
+    <Button
+        android:id="@+id/btn_pwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_fragment"
+        android:onClick="viewClick"
+        android:text="密码支付界面" />
 </RelativeLayout>
