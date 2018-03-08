@@ -55,6 +55,10 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_7
         targetCompatibility JavaVersion.VERSION_1_7
     }
+
+    task clean(type: Delete) {
+        delete rootProject.buildDir
+    }
 }
 
 dependencies {
@@ -66,4 +70,5 @@ dependencies {
     compile 'com.android.support:support-v4:25.2.0'
     compile 'com.google.code.gson:gson:2.6.2'
     compile 'com.jungly:gridPasswordView:0.3'
+    compile 'com.linroid.filtermenu:library:0.2.+@aar'
 }

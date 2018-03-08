@@ -3,8 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="orm.ndkdemo">
 
-    <uses-sdk tools:overrideLibrary="com.jungly.gridpasswordview"></uses-sdk>
-
+    <uses-sdk tools:overrideLibrary="com.jungly.gridpasswordview,com.linroid.filtermenu.library"></uses-sdk>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -25,6 +24,7 @@
             android:name=".Fragment.FragmentMainActivity"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".view.GridPwdView"></activity>
+        <activity android:name=".view.MFilterMenu"></activity>
     </application>
 
 </manifest>
