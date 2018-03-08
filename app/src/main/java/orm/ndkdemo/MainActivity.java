@@ -24,6 +24,7 @@ import orm.ndkdemo.gson.GsonDemo;
 import orm.ndkdemo.view.GridPwdView;
 import orm.ndkdemo.view.MFilterMenu;
 import orm.ndkdemo.view.SmartTable;
+import orm.ndkdemo.view.SwipeMenuView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -42,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
     Button btn_filtermenu;
     @BindView(R.id.btn_smarttab)
     Button btn_smarttab;
+    @BindView(R.id.btn_swipemenuList)
+    Button btn_swipeMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         gsonDemo.sinceVersion();
     }
 
-    @OnClick({R.id.btn_fragment, R.id.btn_pwd, R.id.btn_filterMenu, R.id.btn_smarttab})
+    @OnClick({R.id.btn_fragment, R.id.btn_pwd, R.id.btn_filterMenu, R.id.btn_smarttab,R.id.btn_swipemenuList})
     public void viewClick(Button button) {
         switch (button.getId()) {
             case R.id.btn_fragment:
@@ -81,6 +84,10 @@ public class MainActivity extends AppCompatActivity {
             case R.id.btn_smarttab:
                 Intent smartTableItent = new Intent(MainActivity.this, SmartTable.class);
                 startActivity(smartTableItent);
+                break;
+            case R.id.btn_swipemenuList:
+                Intent swipeMenuItent = new Intent(MainActivity.this, SwipeMenuView.class);
+                startActivity(swipeMenuItent);
                 break;
         }
     }

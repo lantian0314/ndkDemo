@@ -61,4 +61,12 @@
         android:layout_below="@id/btn_filterMenu"
         android:onClick="viewClick"
         android:text="SmartTabLayout界面" />
+
+    <Button
+        android:id="@+id/btn_swipemenuList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_smarttab"
+        android:onClick="viewClick"
+        android:text="SwipeMenuListView界面" />
 </RelativeLayout>
