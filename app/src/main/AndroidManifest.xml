@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="orm.ndkdemo">
 
-    <uses-sdk tools:overrideLibrary="com.jungly.gridpasswordview,com.linroid.filtermenu.library"></uses-sdk>
+    <uses-sdk tools:overrideLibrary="com.jungly.gridpasswordview,com.linroid.filtermenu.library,com.ogaclejapan.smarttablayout.utils"></uses-sdk>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -25,6 +25,7 @@
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".view.GridPwdView"></activity>
         <activity android:name=".view.MFilterMenu"></activity>
+        <activity android:name=".view.SmartTable"></activity>
     </application>
 
 </manifest>

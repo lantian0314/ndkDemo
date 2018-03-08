@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -22,6 +23,7 @@ import orm.ndkdemo.Fragment.FragmentMainActivity;
 import orm.ndkdemo.gson.GsonDemo;
 import orm.ndkdemo.view.GridPwdView;
 import orm.ndkdemo.view.MFilterMenu;
+import orm.ndkdemo.view.SmartTable;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
     Button btn_pwd;
     @BindView(R.id.btn_filterMenu)
     Button btn_filtermenu;
+    @BindView(R.id.btn_smarttab)
+    Button btn_smarttab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         gsonDemo.sinceVersion();
     }
 
-    @OnClick({R.id.btn_fragment, R.id.btn_pwd,R.id.btn_filterMenu})
+    @OnClick({R.id.btn_fragment, R.id.btn_pwd, R.id.btn_filterMenu, R.id.btn_smarttab})
     public void viewClick(Button button) {
         switch (button.getId()) {
             case R.id.btn_fragment:
@@ -73,6 +77,10 @@ public class MainActivity extends AppCompatActivity {
             case R.id.btn_filterMenu:
                 Intent menuItent = new Intent(MainActivity.this, MFilterMenu.class);
                 startActivity(menuItent);
+                break;
+            case R.id.btn_smarttab:
+                Intent smartTableItent = new Intent(MainActivity.this, SmartTable.class);
+                startActivity(smartTableItent);
                 break;
         }
     }
