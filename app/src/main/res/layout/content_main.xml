@@ -69,4 +69,12 @@
         android:layout_below="@id/btn_smarttab"
         android:onClick="viewClick"
         android:text="SwipeMenuListView界面" />
+
+    <Button
+        android:id="@+id/btn_brvah"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_swipemenuList"
+        android:onClick="viewClick"
+        android:text="BRVAH框架(RecyclerAdapter)" />
 </RelativeLayout>

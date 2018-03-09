@@ -20,6 +20,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import orm.aidl.demo.IMyAidlInterface;
 import orm.ndkdemo.Fragment.FragmentMainActivity;
+import orm.ndkdemo.RecyclerView.RecyclerActivity;
 import orm.ndkdemo.gson.GsonDemo;
 import orm.ndkdemo.view.GridPwdView;
 import orm.ndkdemo.view.MFilterMenu;
@@ -45,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
     Button btn_smarttab;
     @BindView(R.id.btn_swipemenuList)
     Button btn_swipeMenu;
+    @BindView(R.id.btn_brvah)
+    Button btn_brvah;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
         gsonDemo.sinceVersion();
     }
 
-    @OnClick({R.id.btn_fragment, R.id.btn_pwd, R.id.btn_filterMenu, R.id.btn_smarttab,R.id.btn_swipemenuList})
+    @OnClick({R.id.btn_fragment, R.id.btn_pwd, R.id.btn_filterMenu, R.id.btn_smarttab, R.id.btn_swipemenuList, R.id.btn_brvah})
     public void viewClick(Button button) {
         switch (button.getId()) {
             case R.id.btn_fragment:
@@ -88,6 +91,10 @@ public class MainActivity extends AppCompatActivity {
             case R.id.btn_swipemenuList:
                 Intent swipeMenuItent = new Intent(MainActivity.this, SwipeMenuView.class);
                 startActivity(swipeMenuItent);
+                break;
+            case R.id.btn_brvah:
+                Intent brvahItent = new Intent(MainActivity.this, RecyclerActivity.class);
+                startActivity(brvahItent);
                 break;
         }
     }
